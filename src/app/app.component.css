@@ -1,0 +1,35 @@
+.clear-left {
+    clear: left;
+}
+
+.user-list {
+    min-width: 15em;
+    min-height: 30em;
+    background: #F6F6F6;
+    border-style: solid;
+    border-color: blue;
+    border-width: 1px;
+    color: blue;
+    cursor: pointer;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+    margin-right: 4em;
+    float: left;
+}
+
+.user-details {
+    min-width: 50em;
+    min-height: 30em;
+    background: #F6F6F6;
+    border-style: solid;
+    border-color: blue;
+    border-width: 1px;
+    color: blue;
+    cursor: pointer;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+    margin-right: 4em;
+    float: left;
+}
