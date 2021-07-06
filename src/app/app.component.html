@@ -1,5 +1,5 @@
 <div *ngFor="let i of QuarterCount">
-  <app-quarter-list [From]="i" [To]="i + 2"></app-quarter-list>
+  <app-quarter-list [From]="i" [To]="i + 2" (clickOnGroupEvent)="changeGroup($event)"></app-quarter-list>
 </div>
 <div class="clear-left">
   <app-user-list class="user-list"></app-user-list>

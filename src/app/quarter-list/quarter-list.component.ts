@@ -1,19 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-quarter-list',
   templateUrl: './quarter-list.component.html',
   styleUrls: ['./quarter-list.component.css']
 })
-export class QuarterListComponent implements OnInit {
+export class QuarterListComponent {
 
   @Input() From = 0;
 
   @Input() To = 0;
 
+  @Output() clickOnGroupEvent = new EventEmitter<any>();
+
   constructor() { }
 
-  ngOnInit(): void {
+  clickOnGroup() {
+    this.clickOnGroupEvent.emit({
+      from: this.From,
+      to: this.To
+    });
   }
 
 }
