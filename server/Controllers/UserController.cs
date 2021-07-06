@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace server.Controllers
 {
   [ApiController]
-  [Route("[controller]")]
+  [Route("api")]
   public class UserController : ControllerBase
   {
-    [HttpGet]
+    [HttpGet("Users")]
     public async Task<List<UserGroup>> GetUsers()
     {
       return await Logic.GetUsers();
