@@ -2,6 +2,6 @@
   <app-quarter-list [From]="i" [To]="i + 2" (clickOnGroupEvent)="changeGroup($event)"></app-quarter-list>
 </div>
 <div class="clear-left">
-  <app-user-list class="user-list"></app-user-list>
+  <app-user-list class="user-list" [displayGroup]="selectedGroup"></app-user-list>
   <app-user-details class="user-details"></app-user-details>
 </div>

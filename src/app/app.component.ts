@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GetUsersService } from './get-users.service';
 
 @Component({
@@ -9,11 +9,17 @@ import { GetUsersService } from './get-users.service';
 })
 export class AppComponent implements OnInit {
 
+  @Output() groupChangedEvent = new EventEmitter<any>();
+
+  QuarterCount = [1, 4, 7, 10];
+
   currentFrom = 0;
 
   currentTo = 0;
 
   groupList = [];
+
+  selectedGroup: any;
   
   constructor(private service: GetUsersService) { }
 
@@ -22,11 +28,13 @@ export class AppComponent implements OnInit {
       .subscribe((data: any) => this.groupList = data);
   }
 
-  QuarterCount = [1, 4, 7, 10];
-
   changeGroup(eventArgs: any) {
-    this.currentFrom = eventArgs.from;
-    this.currentTo = eventArgs.to;
+    this.selectedGroup = this.groupList.find((g: any) => {
+      if (g.from === eventArgs.from && g.to === eventArgs.to)
+        return true;
+      
+      return false;
+    });
   }
 
 }
