@@ -1,5 +1,5 @@
 <ng-container *ngIf="displayGroup">
     <div *ngFor="let user of displayGroup.users">
-        <div class="user-name">{{ user.name }}</div>
+        <div (click)="onUserSelected(user)" class="user-name">{{ user.name }}</div>
     </div>
 </ng-container>

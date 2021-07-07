@@ -1,1 +1,7 @@
-<p>user-details works!</p>
+<ng-container *ngIf="user">
+    <h1>{{ user.id }}</h1>
+    <h1>{{ user.name }}</h1>
+    <h1>{{ user.age }}</h1>
+    <h1>{{ user.date | date: 'dd/MM/yyyy' }}</h1>
+    <h1>{{ user.address }}</h1>
+</ng-container>

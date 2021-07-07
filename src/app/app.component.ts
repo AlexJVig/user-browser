@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
   groupList = [];
 
   selectedGroup: any;
+
+  selectedUser: any;
   
   constructor(private service: GetUsersService) { }
 
@@ -35,6 +37,10 @@ export class AppComponent implements OnInit {
       
       return false;
     });
+  }
+
+  displayUser(user: any) {
+    this.selectedUser = user;
   }
 
 }
