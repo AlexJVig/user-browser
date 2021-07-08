@@ -2,6 +2,7 @@
   <app-quarter-list [From]="i" [To]="i + 2" (clickOnGroupEvent)="changeGroup($event)"></app-quarter-list>
 </div>
 <div class="clear-left">
+  <app-search [allGroups]="groupList" (searchEvent)="changeGroup($event)"></app-search>
   <app-user-list class="user-list" [displayGroup]="selectedGroup" (userSelectedEvent)="displayUser($event)"></app-user-list>
   <app-user-details [user]="selectedUser" class="user-details"></app-user-details>
 </div>

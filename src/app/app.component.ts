@@ -31,12 +31,16 @@ export class AppComponent implements OnInit {
   }
 
   changeGroup(eventArgs: any) {
-    this.selectedGroup = this.groupList.find((g: any) => {
-      if (g.from === eventArgs.from && g.to === eventArgs.to)
-        return true;
-      
-      return false;
-    });
+    if (eventArgs.from && eventArgs.to) {
+      this.selectedGroup = this.groupList.find((g: any) => {
+        if (g.from === eventArgs.from && g.to === eventArgs.to)
+          return true;
+
+          return false;
+      });
+    } else {
+      this.selectedGroup = eventArgs;
+    }
   }
 
   displayUser(user: any) {
