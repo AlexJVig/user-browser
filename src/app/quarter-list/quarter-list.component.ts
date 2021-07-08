@@ -18,7 +18,8 @@ export class QuarterListComponent {
   clickOnGroup() {
     this.clickOnGroupEvent.emit({
       from: this.From,
-      to: this.To
+      to: this.To,
+      quarterNo: this.To / 3
     });
   }
 

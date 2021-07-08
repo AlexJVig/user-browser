@@ -13,17 +13,17 @@ export class AppComponent implements OnInit {
 
   QuarterCount = [1, 4, 7, 10];
 
-  currentFrom = 0;
-
-  currentTo = 0;
-
   groupList = [];
 
   selectedGroup: any;
 
   selectedUser: any;
+
+  resultType: string;
   
-  constructor(private service: GetUsersService) { }
+  constructor(private service: GetUsersService) {
+    this.resultType = 'Welcome!';
+  }
 
   ngOnInit() {
     this.service.getUsers()
@@ -33,6 +33,8 @@ export class AppComponent implements OnInit {
   changeGroup(eventArgs: any) {
     if (eventArgs.from && eventArgs.to) {
       this.selectedGroup = this.groupList.find((g: any) => {
+        this.resultType = 'Q' + eventArgs.quarterNo;
+
         if (g.from === eventArgs.from && g.to === eventArgs.to)
           return true;
 
@@ -40,6 +42,7 @@ export class AppComponent implements OnInit {
       });
     } else {
       this.selectedGroup = eventArgs;
+      this.resultType = 'Search Result:'
     }
   }
 

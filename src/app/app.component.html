@@ -1,8 +1,12 @@
 <div *ngFor="let i of QuarterCount">
   <app-quarter-list [From]="i" [To]="i + 2" (clickOnGroupEvent)="changeGroup($event)"></app-quarter-list>
 </div>
-<div class="clear-left">
+<div class="clear-left search-div">
   <app-search [allGroups]="groupList" (searchEvent)="changeGroup($event)"></app-search>
+  
+</div>
+<div class="clear-left">
+  <h1>{{ resultType }}</h1>
   <app-user-list class="user-list" [displayGroup]="selectedGroup" (userSelectedEvent)="displayUser($event)"></app-user-list>
   <app-user-details [user]="selectedUser" class="user-details"></app-user-details>
 </div>
